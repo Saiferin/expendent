@@ -1,10 +1,11 @@
 package ru.netology.menager;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
@@ -14,10 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doReturn;
 
 class MenagerTest {
-//    @Mock
 
-    private Repository repository1 = new Repository();
-    //    @InjectMocks
     private Menager menager = new Menager();
     private Book firstB = new Book(1, "firstBook", 1, "Author1");
     private Book secondB = new Book(2, "secondBook", 1, "Author2");
@@ -98,4 +96,5 @@ class MenagerTest {
         Product[] expented = new Product[]{firstB, thirdS};
         assertArrayEquals(expented, actual);
     }
+
 }
